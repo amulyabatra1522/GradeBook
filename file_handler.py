@@ -9,8 +9,6 @@ import json
 import os
 from datetime import datetime
 
-# Files are kept in the data/ folder. If that folder is missing (for example
-# the files were uploaded without folders), the program looks next to main.py.
 DATA_DIR = "data" if os.path.isdir("data") else "."
 MARKS_FILE = os.path.join(DATA_DIR, "marks.csv")
 SETTINGS_FILE = os.path.join(DATA_DIR, "settings.json")
@@ -67,4 +65,4 @@ def save_marks(rows):
     except PermissionError:
         print("  Error: marks.csv is open in another program. Close it and try again.")
     finally:
-        pass   # nothing to clean up: `with` already closed the file
+        pass  
