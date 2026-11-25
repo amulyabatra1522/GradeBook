@@ -21,6 +21,14 @@ python main.py
 ```
 Or open **`GradeBook.ipynb`** (38 executed cells) to see the full project step by step: data loading and exploration, cleaning, grade/SGPA logic, pandas analysis, 5 charts, data structures, 7 error-handling tests, file saving and 3 live menu demos. A PDF copy is in **`GradeBook_Notebook.pdf`**.
 
+To import the existing `marks.csv` records into a local SQLite database and regenerate the data-only Excel workbook and charts, run:
+```bash
+python create_local_database.py
+```
+This creates `gradebook.sqlite3` and `GradeBook_Data.xlsx` from the CSV using `settings.json`; the workbook has separate **Marks** and **Student Summary** sheets and contains no charts.
+
+The website's live demo also lets you enter multiple students, keep a removable browser-side log, and download that log as `GradeBook_Entered_Records.xlsx`. The log is saved in browser local storage on the same origin.
+
 ## Features
 - Add students, enter marks (validated 0–100), view results, search by USN or name, delete
 - Automatic total, percentage, grade, SGPA, pass/fail and backlogs
